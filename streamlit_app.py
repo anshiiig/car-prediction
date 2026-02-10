@@ -4,7 +4,7 @@ import requests
 st.set_page_config(page_title="Car Price Prediction", page_icon="🚗", layout="centered")
 
 API_URL = (
-    "https://car-prediction-kgyc.onrender.com/predict"
+    "https://car-prediction-kgyc.onrender.com/predict" or "http://127.0.0.1:8000/predict"
 )  # change if your endpoint differs
 
 st.title("🚗 Car Price Prediction")
@@ -37,7 +37,7 @@ owner = int(owner_label.split()[0])
 
 payload = {
     "Car_Name": str(car_name),
-    "year": int(year),
+    "Year": int(year),
     "Present_Price": float(present_price),
     "Kms_Driven": int(kms_driven),
     "Fuel_Type": str(fuel_type),
