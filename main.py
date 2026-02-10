@@ -2,9 +2,20 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from schema import CarFeatures, PredictionResponse
 from model import predict_price,load_artifacts
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI(title="Car Price Prediction API", version="1.0")
+
+# with the help of this we can access api form any place without any cors error
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.on_event("startup")
 def startup_event():

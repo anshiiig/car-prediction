@@ -24,7 +24,7 @@ def preprocess(payload: dict) -> pd.DataFrame:
     """
     df = pd.DataFrame([payload])
 
-    categorical_cols = ["Car_Name", "Fuel_Type", "Seller_Type", "Transmission", "Owner"]
+    categorical_cols = ["Fuel_Type", "Seller_Type", "Transmission", "Owner", "Car_Name"]
     df_encoded = pd.get_dummies(df, columns=categorical_cols, drop_first=True)
 
     # Align columns to training columns
