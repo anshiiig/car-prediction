@@ -37,7 +37,7 @@ owner = int(owner_label.split()[0])
 
 payload = {
     "Car_Name": str(car_name),
-    "Year": int(year),
+    "year": int(year),
     "Present_Price": float(present_price),
     "Kms_Driven": int(kms_driven),
     "Fuel_Type": str(fuel_type),
